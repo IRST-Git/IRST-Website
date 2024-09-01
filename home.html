@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - IRST Bios Utilities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="menu-toggle">
+                ≡
+            </div>
+            <nav class="side-menu">
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="index.html">Downloads</a></li>
+                    <!-- Add more options as needed -->
+                </ul>
+                <div class="menu-footer">
+                    <p>Powered by: Team IndiaRefix</p>
+                </div>
+            </nav>
+            <img src="logo.png" alt="IndiaRefix Logo" class="logo">
+            <h1>IRST Bios Utilities</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <h2>Welcome!</h2>
+            <p>IRST is a user friendly tool built to provide various BIOS related fuctions.</p>
+            <p>The tool can be downloaded by accessing the downloads page linked below.</p>
+            <!-- Add the Downloads button here -->
+            <a href="index.html" class="download-btn center-btn">Go To Downloads</a>
+            <br><br>
+            <p>We thank you for visiting the site.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by: Team IndiaRefix</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sideMenu = document.querySelector('.side-menu');
+
+        menuToggle.addEventListener('click', (e) => {
+            sideMenu.classList.toggle('active');
+            menuToggle.classList.toggle('hidden');
+            e.stopPropagation(); // Prevent the click from closing the menu immediately
+        });
+
+        document.addEventListener('click', (e) => {
+            if (sideMenu.classList.contains('active') && !sideMenu.contains(e.target)) {
+                sideMenu.classList.remove('active');
+                menuToggle.classList.remove('hidden');
+            }
+        });
+
+        sideMenu.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent clicks inside the menu from closing it
+        });
+    </script>
+</body>
+</html>
