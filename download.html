@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRST Bios Utilities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="menu-toggle">
+                ≡
+            </div>
+            <nav class="side-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="download.html" class="active">Downloads</a></li>
+                    <!-- Add more options as needed -->
+                </ul>
+                <div class="menu-footer">
+                    <p>Powered by: Team IndiaRefix</p>
+                </div>
+            </nav>
+            <img src="logo.png" alt="IndiaRefix Logo" class="logo">
+            <h1>IRST Bios Utilities</h1>
+        </div>
+    </header>    
+    <main>
+        <div class="main-content">
+            <h2>Download The Software Files</h2>
+            <div class="file-list">
+                <div class="file-item">
+                    <h3>IRST-Release-v1.0</h3>
+                    <p><b>• Whats New ?</b></p>
+                    <p>- Revamped the user experience.</p>
+                    <p>- Fixed a lot of bugs.</p>
+                    <p>- Reworked software security.</p>
+                    <p>- Reworked how registeration works.</p>
+                    <p>- Reworked how the software auto-updates.</p>
+                    <a href="https://www.dropbox.com/scl/fi/wq3awmpz314v9tkwnd0um/IRST-Release-v1.10_Win64_Win8.zip?rlkey=vp82u8dm82h3dfme7v9zml0m2&st=86umznzw&dl=1" class="download-btn">IRST Windows 8,10,11 64-bit</a>
+                    <p>Note: Windows 7 (64bit and 32bit) and Windows 10 (32bit) versions coming soon!</p>
+                </div>
+                <!-- Add more files as needed -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Powered by: Team IndiaRefix</p>
+    </footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sideMenu = document.querySelector('.side-menu');
+    
+        menuToggle.addEventListener('click', (e) => {
+            sideMenu.classList.toggle('active');
+            menuToggle.classList.toggle('hidden');
+            e.stopPropagation(); // Prevent the click from closing the menu immediately
+        });
+    
+        document.addEventListener('click', (e) => {
+            if (sideMenu.classList.contains('active') && !sideMenu.contains(e.target)) {
+                sideMenu.classList.remove('active');
+                menuToggle.classList.remove('hidden');
+            }
+        });
+    
+        sideMenu.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent clicks inside the menu from closing it
+        });
+    </script>    
+</body>
+</html>
